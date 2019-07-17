@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "bunchofbiomes:clay_dirt"
+    }
+  },
+  "result": {
+    "item": "minecraft:clay_ball",
+    "count": 1
+  }
+}

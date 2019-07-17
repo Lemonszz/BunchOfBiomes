@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.ObjectHolder;
 import party.lemons.bunchofbiomes.BunchOfBiomes;
-import party.lemons.bunchofbiomes.biomes.LightJungleBiome;
+import party.lemons.bunchofbiomes.biomes.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +21,8 @@ import java.util.List;
 public class BOBBiomes
 {
 	public static final Biome LIGHT_JUNGLE = Biomes.JUNGLE;
+	public static final Biome DARK_SWAMP = Biomes.DARK_FOREST;
+	public static final Biome TUNDRA = Biomes.MOUNTAINS;
 
 	@SubscribeEvent
 	public static void onRegisterBiomes(RegistryEvent.Register<Biome> event)
@@ -31,7 +33,14 @@ public class BOBBiomes
 		BunchOfBiomes.LOGGER.debug("BIOME REGISTER");
 
 
-		registerBiome(new LightJungleBiome(), "Light Jungle", 150, true, BiomeManager.BiomeType.WARM,Type.JUNGLE);
+		registerBiome(new LightJungleBiome(), "Light Jungle", 10, true, BiomeManager.BiomeType.WARM,Type.JUNGLE);
+		registerBiome(new DarkSwampBiome(), "Dark Swamp", 10, true, BiomeManager.BiomeType.COOL,Type.SPOOKY, Type.SWAMP, Type.FOREST, Type.DENSE);
+		registerBiome(new MarshBiome(), "Marsh", 10, true, BiomeManager.BiomeType.COOL,Type.PLAINS, Type.SWAMP, Type.LUSH, Type.SPARSE);
+		registerBiome(new TundraBiome(), "Tundra", 10, true, BiomeManager.BiomeType.COOL,Type.MOUNTAIN, Type.PLAINS, Type.MOUNTAIN, Type.COLD, Type.SPARSE);
+		registerBiome(new LightForestBiome(), "Light Forest", 10, true, BiomeManager.BiomeType.WARM,Type.FOREST, Type.PLAINS);
+		registerBiome(new LightTaigaBiome(), "Light Taiga", 10, true, BiomeManager.BiomeType.COOL,Type.FOREST, Type.CONIFEROUS);
+		registerBiome(new LushSwampBiome(), "Lush Swamp", 10, true, BiomeManager.BiomeType.COOL, Type.SWAMP, Type.LUSH);
+		registerBiome(new ClayMountainBiome(), "Clay Cliffs", 10, true, BiomeManager.BiomeType.WARM, Type.MOUNTAIN, Type.HILLS);
 	}
 
 	public static BiomeMeta registerBiome(Biome biome, String name, int weight, boolean allowPlayerSpawning, BiomeManager.BiomeType spawnType, Type... types)

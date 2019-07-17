@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "": [
+      { "model": "bunchofbiomes:block/clay_dirt" },
+      { "model": "bunchofbiomes:block/clay_dirt", "y": 90 },
+      { "model": "bunchofbiomes:block/clay_dirt", "y": 180 },
+      { "model": "bunchofbiomes:block/clay_dirt", "y": 270 },
+      { "model": "bunchofbiomes:block/clay_dirt", "x": 90 },
+      { "model": "bunchofbiomes:block/clay_dirt", "x": 180 },
+      { "model": "bunchofbiomes:block/clay_dirt", "x": 270 },
+      { "model": "bunchofbiomes:block/clay_dirt", "z": 90 },
+      { "model": "bunchofbiomes:block/clay_dirt", "z": 180 },
+      { "model": "bunchofbiomes:block/clay_dirt", "z": 270 }
+    ]
+  }
+}

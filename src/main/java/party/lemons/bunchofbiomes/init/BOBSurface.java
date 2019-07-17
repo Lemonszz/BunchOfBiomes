@@ -11,6 +11,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.ObjectHolder;
 import party.lemons.bunchofbiomes.BunchOfBiomes;
+import party.lemons.bunchofbiomes.surface.ClayCliffSurfaceBuilder;
+import party.lemons.bunchofbiomes.surface.MarshSurfaceBuilder;
 import party.lemons.bunchofbiomes.surface.SurfaceBuilderLightJungle;
 
 @Mod.EventBusSubscriber(modid = BunchOfBiomes.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -18,6 +20,8 @@ import party.lemons.bunchofbiomes.surface.SurfaceBuilderLightJungle;
 public class BOBSurface
 {
 	public static final SurfaceBuilder<SurfaceBuilderConfig> MUD_GRASS_COARSE = new SurfaceBuilderLightJungle();
+	public static final SurfaceBuilder<SurfaceBuilderConfig> MARSH = new MarshSurfaceBuilder();
+	public static final SurfaceBuilder<SurfaceBuilderConfig> CLAY_CLIFF = new ClayCliffSurfaceBuilder();
 
 	@SubscribeEvent
 	public static void onRegisterBiomes(RegistryEvent.Register<SurfaceBuilder<?>> event)
@@ -28,6 +32,8 @@ public class BOBSurface
 		BunchOfBiomes.LOGGER.debug("SURFACE REGISTER");
 
 		registerSurfaceBuilder(MUD_GRASS_COARSE, "mud_grass_coarse");
+		registerSurfaceBuilder(MARSH, "marsh");
+		registerSurfaceBuilder(CLAY_CLIFF, "clay_cliff");
 	}
 
 	public static SurfaceBuilder<?> registerSurfaceBuilder(SurfaceBuilder<?> surface, String name)
